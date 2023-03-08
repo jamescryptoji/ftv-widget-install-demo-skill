@@ -3,15 +3,15 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "Fire TV install demo",
           "examplePhrases": [
             "Alexa open hello world",
             "hello",
             "help"
           ],
           "keywords": [],
-          "name": "XS-1",
-          "description": "Sample Full Description",
+          "name": "Fire TV install demo",
+          "description": "Fire TV install demo",
           "smallIconUri": "file://assets/images/en-US_smallIconUri.png",
           "largeIconUri": "file://assets/images/en-US_largeIconUri.png"
         }
