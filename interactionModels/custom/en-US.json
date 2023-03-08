@@ -1,0 +1,85 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "widget context",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "UserEvent",
+          "slots": [],
+          "samples": [
+            "play user event",
+            "show user event",
+            "open user event"
+          ]
+        },
+        {
+          "name": "change",
+          "slots": [],
+          "samples": [
+            "change color"
+          ]
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "viewport",
+          "slots": [],
+          "samples": [
+            "test viewport"
+          ]
+        },
+        {
+          "name": "button",
+          "slots": [],
+          "samples": [
+            "open the button",
+            "show me button",
+            "open button",
+            "show button"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "7"
+}

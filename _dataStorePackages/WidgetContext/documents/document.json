@@ -1,0 +1,126 @@
+{
+	"type": "APL",
+	"version": "1.8",
+	"license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+	"theme": "dark",
+	"import": [{
+		"name": "alexa-layouts",
+		"version": "1.6.0"
+	}],
+	"layouts": {
+		"AlexaPressState2": {
+			"parameters": [{
+				"name": "hasFooterButton",
+				"description": "When true, the tap target will leave space at the bottom for Footer Button CTA. This will be ignored if items parameter is specified. Default is false.",
+				"type": "boolean",
+				"default": false
+			}, {
+				"name": "hasHeader",
+				"description": "When true, the tap target will leave space at the top for Header. This will be ignored if items parameter is specified. Default is true.",
+				"type": "boolean",
+				"default": true
+			}, {
+				"name": "primaryAction",
+				"description": "The command that is triggered when the tap target area is pressed.",
+				"type": "any"
+			}, {
+				"name": "items",
+				"description": "The child component or layout. If more than one child is supplied, only the first one selected or the when property will be used. If specified, hasFooterButton and hasHeader parameter will be ignored.",
+				"type": "array"
+			}, {
+				"name": "theme",
+				"type": "string",
+				"default": "dark",
+				"description": "Colors will be swiched depend on the specified theme (light/dark). Default to dark theme"
+			}],
+			"items": [{
+				"type": "Container",
+				"height": "${displayWhiteOverlay ? '100%' : tapTargetHeight}",
+				"top": "${items ? 0 : (displayWhiteOverlay || !hasHeader ? 0 : @headerHeight)}",
+				"width": "100%",
+				"position": "absolute",
+				"bind": [{
+					"name": "tapTargetHeight",
+					"type": "dimension",
+					"value": "${items ? '100%' : (hasFooterButton && hasHeader ? (viewport.height - @headerHeight - @footerButtonHeight) : (hasHeader ? (viewport.height - @headerHeight) : (hasFooterButton ? (viewport.height - @footerButtonHeight) : '100%')))}"
+				}, {
+					"name": "displayWhiteOverlay",
+					"type": "boolean",
+					"value": false
+				}],
+				"items": [{
+					"type": "TouchWrapper",
+					"description": "Touch target will display white overlay on pointer down and hide white overlay when released",
+					"height": "100%",
+					"top": "0",
+					"width": "100%",
+					"position": "absolute",
+					"onDown": [{
+						"type": "SetValue",
+						"property": "displayWhiteOverlay",
+						"value": "${event.source.pressed}"
+					}],
+					"onUp": [{
+						"type": "SetValue",
+						"property": "displayWhiteOverlay",
+						"value": "${event.source.pressed}"
+					}, "${primaryAction}"],
+					"onMove": [{
+						"type": "SetValue",
+						"property": "displayWhiteOverlay",
+						"value": "${event.source.pressed}"
+					}],
+					"onCancel": [{
+						"type": "SetValue",
+						"property": "displayWhiteOverlay",
+						"value": "${event.source.pressed}"
+					}],
+					"items": "${items}"
+				}, {
+					"type": "Frame",
+					"description": "White Overlay container",
+					"height": "100%",
+					"width": "100%",
+					"position": "absolute",
+					"backgroundColor": "${theme != 'light' ? @colorGray100 : @colorGray800}",
+					"opacity": 0.2,
+					"display": "${displayWhiteOverlay? 'normal' : 'none'}"
+				}]
+			}]
+		}
+	},
+	"mainTemplate": {
+		"parameters": ["payload"],
+		"items": [{
+			"type": "Container",
+			"height": "100%",
+			"width": "100%",
+			"items": [{
+				"type": "Pager",
+				"pagerId": "WidgerPager",
+				"width": "100%",
+				"height": "100%",
+				"data": ["@colorRed800", "@colorBlue800", "@colorGray800", "@colorGreen800", "@colorOrange800", "@colorPurple800"],
+				"items": [{
+					"type": "Container",
+					"width": "100%",
+					"height": "100%",
+					"item": [{
+						"type": "AlexaTextWrapping",
+						"primaryText": "Ashwin is testing now on FTV",
+						"secondaryText": "Old widget package",
+						"tertiaryText": "This is the tertiary text.",
+						"backgroundColor": "${data}",
+						"headerTitle": "Header",
+						"buttonVisible": true,
+						"buttonText": "footer action"
+					}, {
+						"type": "AlexaPressState2",
+						"hasFooterButton": false,
+						"hasHeader": true
+					}]
+				}]
+			}]
+		}]
+	}
+}
