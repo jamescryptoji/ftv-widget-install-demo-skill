@@ -145,15 +145,15 @@
       "isAvailableWorldwide": true,
       "locales": {
         "en-US": {
-          "description": "Sample Full Description",
           "examplePhrases": [
             "Alexa open hello world",
             "hello",
             "help"
           ],
           "keywords": [],
-          "name": "widget install example",
-          "summary": "Sample Short Description"
+          "name": "Widget auto-install examples",
+          "summary": "Install widgets on FTV and HUB",
+          "description": "Examples of both old package path and new GA path. As of 23.03.08, FTV only supports old path, Hub devices supports both. With auto-install, no external feature flags are configured with this skill."
         }
       },
       "testingInstructions": "Sample Testing Instructions."

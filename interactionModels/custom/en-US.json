@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "fire tv install demo",
+      "invocationName": "fire tv auto install demo",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
