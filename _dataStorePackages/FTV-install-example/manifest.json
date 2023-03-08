@@ -1,0 +1,100 @@
+{
+    "manifest": {
+        "id": "FTV-install-example",
+        "version": "1.2.7",
+        "type": "APL_WIDGET",
+        "autoInstall": true,
+        "autoUpdate": true,
+        "targetViewports": [
+            {
+                "maxHeight": 221,
+                "maxWidth": 456,
+                "minHeight": 66,
+                "minWidth": 134,
+                "mode": "WIDGET",
+                "shape": "RECTANGLE",
+                "name": "WIDGET_XS"
+            },
+            {
+                "maxHeight": 711,
+                "maxWidth": 425,
+                "minHeight": 222,
+                "minWidth": 134,
+                "mode": "WIDGET",
+                "shape": "RECTANGLE",
+                "name": "WIDGET_M"
+            },
+            {
+                "maxHeight": 1323,
+                "maxWidth": 711,
+                "minHeight": 222,
+                "minWidth": 426,
+                "mode": "WIDGET",
+                "shape": "RECTANGLE",
+                "name": "WIDGET_XL"
+            }
+        ],
+        "supportedDeviceViewports": [
+            {
+                "maxHeight": 540,
+                "maxWidth": 960,
+                "minHeight": 540,
+                "minWidth": 960,
+                "mode": "TV",
+                "shape": "RECTANGLE"
+            },
+            {
+                "maxHeight": 2000,
+                "maxWidth": 2000,
+                "minHeight": 100,
+                "minWidth": 100,
+                "mode": "HUB",
+                "shape": "RECTANGLE"
+            }
+        ],
+        "publishingInformation": {
+            "locales": {
+                "en-US": {
+                    "WIDGET_M": {
+                        "name": "Sample Widget",
+                        "description": "This is supposed to be a Mediumm widget.",
+                        "keywords": [
+                            "greatest",
+                            "all time"
+                        ],
+                        "iconUri": "https://apl-e2e-automation.s3.amazonaws.com/TestFiles/pictures/basketball_widget.png",
+                        "previews": [
+                            "https://apl-e2e-automation.s3.amazonaws.com/TestFiles/pictures/basketball_preview_M.png"
+                        ]
+                    },
+                    "WIDGET_XL": {
+                        "name": "Sample Widget",
+                        "description": "This is supposed to be a extra large widget.",
+                        "keywords": [
+                            "greatest",
+                            "all time"
+                        ],
+                        "iconUri": "https://apl-e2e-automation.s3.amazonaws.com/TestFiles/pictures/basketball_widget.png",
+                        "previews": [
+                            "https://apl-e2e-automation.s3.amazonaws.com/TestFiles/pictures/basketball_preview_XL.png"
+                        ]
+                    },
+                    "WIDGET_XS": {
+                        "name": "Sample Widget",
+                        "description": "This is supposed to be a extra small widget.",
+                        "keywords": [
+                            "greatest",
+                            "all time"
+                        ],
+                        "iconUri": "https://apl-e2e-automation.s3.amazonaws.com/TestFiles/pictures/basketball_widget.png",
+                        "previews": [
+                            "https://apl-e2e-automation.s3.amazonaws.com/TestFiles/pictures/basketball_preview_XL.png"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "packageVersion": "1.2",
+    "packageType": "WIDGET"
+}
